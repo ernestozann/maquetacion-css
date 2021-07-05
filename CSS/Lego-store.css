@@ -3,7 +3,7 @@
 	--red: #d5040a;
 	--blue: #036cb6;
 }
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
 body {
 	font-family: 'Lato', sans-serif;
 	margin: 0;
@@ -28,6 +28,41 @@ body {
 	height: 100%;
 	width: 100%;
 }
+.navbar {
+	grid-area: "nav";
+	display: flex;
+}
+.navbar__content {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding-left:80px;
+	/*animation*/
+	animation: 2s navbar 0.5s ease-in-out;
+}
+@keyframes navbar {
+	from {
+		transform: translateY(-200px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+.navbar__content img {
+	width: 50px;
+}
+.navbar__content ul {
+	display: flex;
+	justify-content: space-evenly;
+	list-style: none;
+	padding: 0;
+	width: 450px;
+}
+.navbar__content ul li a {
+	color: var(--red);
+	font-weight: 100;
+	text-decoration: none;
+}
 .loader {
 	background: white;
 	width: 100%;
@@ -38,7 +73,7 @@ body {
 	justify-content: center;
 	z-index: 3;
 	/*animations*/
-	animation: loader 2s linear forwards;
+	animation: loader 0s linear forwards;
 }
 @keyframes loader {
 	0% {
