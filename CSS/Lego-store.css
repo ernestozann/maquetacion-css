@@ -95,6 +95,54 @@ body {
 		transform: translateY(0);
 	}
 }
+.side-content {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	align-items: center;
+	grid-area: aside;
+}
+.side-content p {
+	transform: rotate(-90deg);
+	font-size: 36px;
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	/*animations*/
+	opacity: 0;
+	animation-name: side-content-text;
+	animation-duration: 500ms;
+	animation-delay: 2.5s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+@keyframes side-content-text {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.side-content img {
+	width: 100%;
+	grid-column: 2 / 6;
+	grid-row: 1 / 2;
+	/*animations*/
+	animation: 2s side-content-img 0.5s ease-in-out;
+}
+@keyframes side-content-img {
+	from {
+		transform: translateX(600px);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+.side-content div {
+	background-color: var(--yellow);
+	height: 100%;
+	grid-column: 4 / 7;
+	grid-row: 1 / 2;
+}
 .loader {
 	background: white;
 	width: 100%;
